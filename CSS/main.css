@@ -1,0 +1,235 @@
+@import url('https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&family=Noto+Sans+Arabic:wght@100..900&family=Noto+Serif+TC:wght@200..900&display=swap');
+/*font-family: "Noto Sans Arabic", sans-serif; */
+
+:root {
+    --mainWhite: #E9E3D5;
+    --material1: #C6A988;
+    --material2: #6F4E37;
+    --material3: #4A2920;
+    --material4: #492310;
+    --material5: #2D0C05;
+    --material6-orange: #D99937;
+    --text: #090604;
+    --buttonHover: #c6a98871;
+    --buttonShadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    --mugShadow: -4px 7px 7px rgba(0, 0, 0, 0.2);
+    background-color: var(--material1);
+    overflow: hidden;
+}
+
+* {
+    -webkit-box-sizing: border-box;
+    -o-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Noto Sans Arabic", sans-serif;
+    color: var(--text);
+    margin: 5px;
+    padding: 10px;
+    height: calc(100vh - 10px);
+    border-radius: 10px;
+    background-image: url("./../Main\ page\ photos/wallpaper.png");
+    background-color: var(--mainWhite);
+    background-blend-mode: darken;
+    background-position: center;
+    background-repeat: repeat;
+}
+
+button {
+    font-family: "Noto Sans Arabic", sans-serif;
+    color: var(--text);
+}
+
+nav {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    a {
+        height: 60px;
+        width: 60px;
+    }
+
+    a img {
+        background-color: var(--material1);
+        width: inherit;
+        border-radius: 50%;
+    }
+
+    button.humburger {
+        cursor: pointer;
+        height: 40px;
+        width: 50px;
+        margin-right: -10px;
+        background-color: var(--material1);
+        border: none;
+        border-top-left-radius: 50%;
+        border-bottom-left-radius: 50%;
+        padding: 5px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        position: relative;
+
+        .bar {
+            width: 25px;
+            height: 4px;
+            background-color: var(--material4);
+            margin: 2px;
+            border-radius: 3px;
+        }
+    }
+}
+
+.humburger::after {
+    content: "";
+    position: absolute;
+    width: 40%;
+    height: 20px;
+    bottom: 40px;
+    right: 0;
+    border-bottom-right-radius: 10px;
+    box-shadow: 4px 2px 0 2px var(--material1);
+    background-color: transparent;
+}
+
+.humburger::before {
+    content: "";
+    position: absolute;
+    width: 40%;
+    height: 20px;
+    top: 40px;
+    right: 0;
+    border-top-right-radius: 15px;
+    box-shadow: 4px -2px 0 2px var(--material1);
+    background-color: transparent;
+}
+
+main {
+    direction: rtl;
+}
+
+.headline {
+    font-size: 30px;
+    margin-right: 5px;
+    margin-top: 70px;
+    line-height: 45px;
+    animation-name: slideleft;
+    animation-duration: 2000ms;
+    animation-fill-mode: both;
+
+    h1 {
+        color: var(--material5);
+        margin-bottom: 0;
+        font-weight: 900;
+        animation-name: slideleft;
+        animation-duration: 2000ms;
+    }
+
+    span {
+        font-size: 20px;
+        font-weight: 550;
+        color: var(--material6-orange);
+        animation-name: slideleft;
+        animation-duration: 2000ms;
+    }
+}
+
+.buttons {
+    margin-top: 50px;
+    width: 100%;
+    margin-right: 20px;
+
+    button {
+        width: 30%;
+        margin-left: 20px;
+        border-radius: 20px;
+        border: none;
+        color: var(--text);
+        transition: 200ms;
+        box-shadow: var(--buttonShadow);
+        padding: 5px;
+    }
+
+    #first-button {
+        background-color: var(--material1);
+        outline: 3px solid var(--material1);
+        animation-name: scale;
+        animation-duration: 2000ms;
+        animation-timing-function: cubic-bezier(1, 0, 0, 1);
+    }
+
+    #first-button:hover {
+        background-color: var(--buttonHover);
+        outline: transparent;
+    }
+
+    #sec-button {
+        background-color: transparent;
+        outline: 3px solid var(--material1);
+        animation-name: scale;
+        animation-duration: 2000ms;
+        animation-timing-function: cubic-bezier(1, 0, 0, 1);
+        animation-fill-mode: both;
+        animation-delay: 200ms;
+    }
+
+    #sec-button:hover {
+        background-color: var(--material1);
+        outline: transparent;
+    }
+}
+
+.photo-space {
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+
+    #mug {
+        width: 400px;
+        transform: rotate(7deg) translateX(100px);
+        filter: drop-shadow(var(--mugShadow));
+        animation-name: slideleftMug;
+        animation-duration: 2000ms;
+        animation-fill-mode: both;
+    }
+
+    #coffee-beans {
+        width: 600px;
+        position: absolute;
+        left: -400px;
+        bottom: -150px;
+        filter: drop-shadow(var(--mugShadow));
+        animation-name: slideright;
+        animation-duration: 2000ms;
+    }
+}
+
+@keyframes slideleft {
+    0% {
+        transform: translateX(200px);
+    }
+}
+
+@keyframes slideleftMug {
+    0% {
+        transform: translateX(500px);
+    }
+}
+
+@keyframes slideright {
+    0% {
+        transform: translateX(-200px);
+    }
+}
+
+@keyframes scale {
+    0% {
+        transform: scale(0.7);
+    }
+}
