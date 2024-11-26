@@ -4,7 +4,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Loai Wael Hassan">
     <link rel="stylesheet" href="./CSS/main.css">
+    <script src="./JS/jQuery.js"></script>
+    <script src="./JS/main.js"></script>
 
     <!-- Favicon -->
     <link rel="icon" type="image/png" sizes="16x16" href="./Favicons/favicon_16x16.png">
@@ -16,14 +19,30 @@
     <title>Allam coffee</title>
 </head>
 
-<body>
+<body id="body">
     <nav>
-        <a href=""><img src="./Main page photos/allam logo.png" alt="allam logo"></a>
-        <button class="humburger" title="Menu list">
-            <div class="bar"></div>
-            <div class="bar"></div>
-            <div class="bar"></div>
-        </button>
+        <a id="logo" href=""><img src="./Main page photos/allam logo.png" alt="allam logo"></a>
+        <div id="menu">
+            <button class="humburger" title="Menu list">
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+            </button>
+            <ul class="nav-buttons">
+                <a id="main" href="">
+                    <li>الرئيسية</li>
+                </a>
+                <a id="menu" href="">
+                    <li>قائمة المشروبات</li>
+                </a>
+                <a id="info" href="">
+                    <li>معلومات عنا</li>
+                </a>
+                <a id="contacts" href="">
+                    <li>تواصل معنا</li>
+                </a>
+            </ul>
+        </div>
     </nav>
     <main>
         <div class="headline">

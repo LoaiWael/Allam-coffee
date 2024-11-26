@@ -49,18 +49,21 @@ nav {
     justify-content: space-between;
     align-items: center;
 
-    a {
+    a#logo {
         height: 60px;
         width: 60px;
+        animation-name: slidedown;
+        animation-duration: 2000ms;
+        animation-fill-mode: both;
     }
 
-    a img {
+    a#logo img {
         background-color: var(--material1);
         width: inherit;
         border-radius: 50%;
     }
 
-    button.humburger {
+    .humburger {
         cursor: pointer;
         height: 40px;
         width: 50px;
@@ -70,7 +73,7 @@ nav {
         border-top-left-radius: 50%;
         border-bottom-left-radius: 50%;
         padding: 5px;
-        display: flex;
+        display: none;
         align-items: center;
         justify-content: center;
         flex-direction: column;
@@ -83,6 +86,52 @@ nav {
             margin: 2px;
             border-radius: 3px;
         }
+    }
+
+    .nav-buttons {
+        list-style-type: none;
+        margin: 0;
+        padding: 5px;
+        border-radius: 30px;
+        background-color: var(--material1);
+        display: flex;
+        flex-direction: row-reverse;
+        gap: 20px;
+        animation-name: slidedown;
+        animation-duration: 2300ms;
+        animation-delay: 200ms;
+        animation-fill-mode: both;
+        font-weight: 400;
+
+        a {
+            text-decoration: none;
+            color: var(--text);
+            padding: 0 10px;
+            width: fit-content;
+            height: fit-content;
+            border-radius: 20px;
+            transition: 200ms;
+        }
+
+        a:hover {
+            background-color: #6f4e3761;
+        }
+
+        a:active {
+            background-color: var(--material4);
+            color: var(--mainWhite);
+        }
+
+        #main {
+            background-color: var(--material4);
+            color: var(--mainWhite);
+            pointer-events: none;
+        }
+    }
+
+    #menu {
+        position: relative;
+        z-index: 2;
     }
 }
 
@@ -195,7 +244,7 @@ main {
         transform: rotate(7deg) translateX(100px);
         filter: drop-shadow(var(--mugShadow));
         animation-name: slideleftMug;
-        animation-duration: 2000ms;
+        animation-duration: 2400ms;
         animation-fill-mode: both;
     }
 
@@ -206,7 +255,67 @@ main {
         bottom: -150px;
         filter: drop-shadow(var(--mugShadow));
         animation-name: slideright;
-        animation-duration: 2000ms;
+        animation-duration: 2400ms;
+    }
+}
+
+@media (max-width:570px) {
+    nav .humburger {
+        display: flex;
+    }
+
+    #logo {
+        animation-play-state: paused;
+        animation-direction: reverse;
+        width: 50px;
+        height: 50px;
+    }
+
+    nav .nav-buttons {
+        position: absolute;
+        animation-play-state: paused;
+        animation-direction: reverse;
+        flex-direction: column;
+        right: -156.45px;
+        top: -20px;
+        direction: rtl;
+        border-radius: 0 0 0 15px;
+        padding: 10px;
+
+        a {
+            width: 100%;
+            border-radius: 10px;
+        }
+    }
+
+    .buttons {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-right: 0;
+        width: 100%;
+        gap: 12px;
+
+        button {
+            width: 78%;
+        }
+    }
+
+    .photo-space {
+        #mug {
+            width: 300px;
+        }
+
+        #coffee-beans {
+            width: 500px;
+            left: -350px;
+        }
+    }
+}
+
+@keyframes slidedown {
+    0% {
+        transform: translateY(-100px);
     }
 }
 
