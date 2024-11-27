@@ -27,7 +27,6 @@ body {
     font-family: "Noto Sans Arabic", sans-serif;
     color: var(--text);
     margin: 0;
-    overflow: hidden;
 }
 
 main {
@@ -40,6 +39,7 @@ main {
     background-blend-mode: darken;
     background-position: center;
     background-repeat: repeat;
+    overflow: hidden;
 }
 
 button {
@@ -52,6 +52,7 @@ nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    position: relative;
 
     a#logo {
         height: 60px;
@@ -264,6 +265,10 @@ section {
 }
 
 @media (max-width:570px) {
+    body {
+        overflow: hidden;
+    }
+
     nav .humburger {
         display: flex;
     }
@@ -306,6 +311,7 @@ section {
     }
 
     .photo-space {
+
         #mug {
             width: 300px;
         }
