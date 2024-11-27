@@ -13,7 +13,6 @@
     --buttonHover: #c6a98871;
     --buttonShadow: 0 2px 5px rgba(0, 0, 0, 0.2);
     --mugShadow: -4px 7px 7px rgba(0, 0, 0, 0.2);
-    background-color: var(--material1);
 }
 
 * {
@@ -27,6 +26,7 @@ body {
     font-family: "Noto Sans Arabic", sans-serif;
     color: var(--text);
     margin: 0;
+    background-color: var(--material1);
 }
 
 main {
@@ -55,8 +55,8 @@ nav {
     position: relative;
 
     a#logo {
-        height: 60px;
-        width: 60px;
+        height: 55px;
+        width: 55px;
         animation-name: slidedown;
         animation-duration: 2000ms;
         animation-fill-mode: both;
@@ -134,7 +134,7 @@ nav {
         }
     }
 
-    #menu {
+    #menu-nav {
         position: relative;
         z-index: 2;
     }
