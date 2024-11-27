@@ -14,7 +14,6 @@
     --buttonShadow: 0 2px 5px rgba(0, 0, 0, 0.2);
     --mugShadow: -4px 7px 7px rgba(0, 0, 0, 0.2);
     background-color: var(--material1);
-    overflow: hidden;
 }
 
 * {
@@ -27,10 +26,15 @@
 body {
     font-family: "Noto Sans Arabic", sans-serif;
     color: var(--text);
+    margin: 0;
+    overflow: hidden;
+}
+
+main {
     margin: 5px;
     padding: 10px;
-    height: calc(100vh - 10px);
     border-radius: 10px;
+    height: calc(100vh - 10px);
     background-image: url("./../Main\ page\ photos/wallpaper.png");
     background-color: var(--mainWhite);
     background-blend-mode: darken;
@@ -159,7 +163,7 @@ nav {
     background-color: transparent;
 }
 
-main {
+section {
     direction: rtl;
 }
 
@@ -276,7 +280,7 @@ main {
         animation-play-state: paused;
         animation-direction: reverse;
         flex-direction: column;
-        right: -156.45px;
+        right: -156px;
         top: -20px;
         direction: rtl;
         border-radius: 0 0 0 15px;
