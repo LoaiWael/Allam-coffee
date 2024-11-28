@@ -62,6 +62,8 @@ header {
     right: 5px;
     top: 5px;
     direction: ltr;
+    animation-name: slideDown;
+    animation-duration: 2100ms;
 }
 
 nav {
@@ -84,6 +86,8 @@ nav {
     h1 {
         margin: 0;
         color: var(--material5);
+        animation-name: slideDown;
+        animation-duration: 2400ms;
     }
 
     a#logo {
@@ -92,6 +96,8 @@ nav {
         animation-name: slidedown;
         animation-duration: 2000ms;
         animation-fill-mode: both;
+        animation-name: slideDown;
+        animation-duration: 2150ms;
     }
 
     a#logo img {
@@ -113,6 +119,8 @@ nav {
         justify-content: center;
         flex-direction: column;
         position: relative;
+        animation-name: slideDown;
+        animation-duration: 2700ms;
 
         .bar {
             width: 25px;
@@ -127,6 +135,11 @@ nav {
         position: relative;
         z-index: 2;
     }
+}
+
+.nav-buttons {
+    animation-name: slideDown;
+    animation-duration: 2700ms;
 }
 
 .nav-buttons,
@@ -162,7 +175,7 @@ nav {
 
     #menu {
         background-color: var(--material4);
-        color: var(--mainWhite);
+        color: white;
         pointer-events: none;
     }
 }
@@ -178,6 +191,10 @@ section.most-orderd {
         margin: 0 50px;
         font-size: 30px;
         position: relative;
+        animation-name: slideUp;
+        animation-duration: 1500ms;
+        animation-delay: 500ms;
+        animation-fill-mode: both;
     }
 
     h2::before {
@@ -198,6 +215,10 @@ section.most-orderd {
         flex-wrap: nowrap;
         overflow: auto;
         padding: 20px;
+        animation-name: slideUp;
+        animation-duration: 2000ms;
+        animation-delay: 500ms;
+        animation-fill-mode: both;
 
         figure {
             flex: 0 0 200px;
@@ -246,6 +267,10 @@ section.most-orderd {
     border-radius: 15px 15px 0 0;
     display: flex;
     flex-direction: column;
+    animation-name: slideUp;
+    animation-duration: 2500ms;
+    animation-delay: 500ms;
+    animation-fill-mode: both;
 
     h2 {
         position: relative;
@@ -265,7 +290,7 @@ section.most-orderd {
 
     >div {
         width: fit-content;
-        margin: 0 0 40px 0;
+        margin: 0 0 90px 0;
 
         .menu-content {
             background-color: var(--material1);
@@ -340,6 +365,102 @@ section.most-orderd {
     }
 }
 
+.fast-scroll {
+    position: fixed;
+    bottom: 0;
+
+    #fast-scroll-button {
+        border: none;
+        border-radius: 50%;
+        width: 60px;
+        height: 60px;
+        background-color: var(--material6-orange);
+        color: white;
+        margin-bottom: 20px;
+        margin-right: 20px;
+        box-shadow: var(--buttonShadow);
+        transition: 100ms;
+        animation-name: slideLeft;
+        animation-duration: 2100ms;
+    }
+
+    #fast-scroll-button:hover {
+        opacity: 0.8;
+    }
+
+    .fast-scroll-links {
+        visibility: hidden;
+        display: flex;
+        justify-content: space-evenly;
+        flex-wrap: wrap;
+        gap: 10px;
+        background-color: var(--material6-orange);
+        border-radius: 10px 10px 0 0;
+        padding: 5px;
+        box-shadow: 0 -2px 7px rgba(0, 0, 0, 0.2);
+
+        a {
+            text-decoration: none;
+            color: white;
+            font-weight: 500;
+            padding: 10px;
+            border-radius: 5px;
+            transition: 100ms;
+        }
+    }
+
+    a:hover {
+        background-color: var(--buttonHover);
+    }
+
+    a:active {
+        background-color: #896124;
+    }
+}
+
+/* .fast-scroll-links::before {
+    content: '';
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    bottom: 0;
+    left: -20px;
+    background-color: transparent;
+    border-radius: 0 0 15px 0;
+    box-shadow: 3px 4px 0 1px var(--material2);
+}
+
+.fast-scroll-links::after {
+    content: '';
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    bottom: 0;
+    right: -20px;
+    background-color: transparent;
+    border-radius: 0 0 0 15px;
+    box-shadow: -3px 4px 0 1px var(--material2);
+} */
+
+@keyframes slideDown {
+    0% {
+        transform: translateY(-100px);
+    }
+}
+
+@keyframes slideLeft {
+    0% {
+        transform: translateX(150px);
+    }
+}
+
+@keyframes slideUp {
+    0% {
+        transform: translateY(100px);
+        opacity: 0;
+    }
+}
+
 @media (max-width:750px) {
     .nav-buttons {
         display: none;
@@ -403,5 +524,13 @@ section.most-orderd {
                 max-width: 200px;
             }
         }
+    }
+
+    .fast-scroll {
+        left: 50%;
+        transform: translateX(-50%);
+        font-size: 14px;
+        gap: 2px;
+        width: 95%;
     }
 }
