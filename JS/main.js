@@ -8,4 +8,7 @@ $(function () {
         }
         isVisible = !isVisible;
     });
+    $('#first-button').click(function (e) {
+        window.location.href = './../Allam-coffee/menu.html';
+    });
 })

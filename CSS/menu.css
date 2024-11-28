@@ -12,6 +12,8 @@
     --text: #090604;
     --buttonHover: #c6a98871;
     --buttonShadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    scrollbar-color: var(--mainWhite) var(--buttonHover);
+    scrollbar-width: auto;
 }
 
 * {
@@ -21,18 +23,45 @@
     box-sizing: border-box;
 }
 
+::-webkit-scrollbar {
+    width: 20px;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: var(--mainWhite);
+    border-radius: 20px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--buttonHover);
+}
+
+::-webkit-scrollbar-track {
+    background: var(--buttonHover);
+}
+
 body {
     font-family: "Noto Sans Arabic", sans-serif;
     color: var(--text);
     margin: 0;
     background-color: var(--material2);
+    background-image: url("./../3D\ models/coffee beans transparent.png");
+    background-size: 70%;
+    background-position: top;
+}
+
+main {
+    margin-top: 90px;
+    direction: rtl;
 }
 
 header {
     position: fixed;
+    z-index: 5;
     left: 5px;
     right: 5px;
     top: 5px;
+    direction: ltr;
 }
 
 nav {
@@ -42,6 +71,7 @@ nav {
     justify-content: space-between;
     align-items: center;
     position: relative;
+    z-index: 2;
     background-color: var(--mainWhite);
     border-radius: 50px;
     background-image: url("./../Main\ page\ photos/wallpaper.png");
@@ -72,13 +102,11 @@ nav {
 
     .humburger {
         cursor: pointer;
-        height: 40px;
-        width: 50px;
-        margin-right: -10px;
+        height: 55px;
+        width: 55px;
         background-color: var(--material1);
         border: none;
-        border-top-left-radius: 50%;
-        border-bottom-left-radius: 50%;
+        border-radius: 50%;
         padding: 5px;
         display: none;
         align-items: center;
@@ -95,50 +123,285 @@ nav {
         }
     }
 
-    .nav-buttons {
-        list-style-type: none;
-        margin: 0 5px 0 0;
-        padding: 5px;
-        border-radius: 30px;
-        background-color: var(--material1);
-        display: flex;
-        flex-direction: row-reverse;
-        gap: 20px;
-        font-weight: 400;
-
-        a {
-            text-decoration: none;
-            color: var(--text);
-            padding: 0 10px;
-            width: fit-content;
-            height: fit-content;
-            border-radius: 20px;
-            transition: 200ms;
-        }
-
-        a:hover {
-            background-color: #6f4e3761;
-        }
-
-        a:active {
-            background-color: var(--material4);
-            color: var(--mainWhite);
-        }
-
-        #main {
-            background-color: var(--material4);
-            color: var(--mainWhite);
-            pointer-events: none;
-        }
-    }
-
     #menu-nav {
         position: relative;
         z-index: 2;
     }
 }
 
-section.most-orderd {
-    background-image: url("./../3D\ models/coffee beans.png");
+.nav-buttons,
+.nav-buttons-small {
+    list-style-type: none;
+    margin: 0 5px 0 0;
+    padding: 5px;
+    border-radius: 30px;
+    background-color: var(--material1);
+    display: flex;
+    flex-direction: row-reverse;
+    gap: 20px;
+    font-weight: 400;
 
+    a {
+        text-decoration: none;
+        color: var(--text);
+        padding: 0 10px;
+        width: fit-content;
+        height: fit-content;
+        border-radius: 20px;
+        transition: 200ms;
+    }
+
+    a:hover {
+        background-color: #6f4e3761;
+    }
+
+    a:active {
+        background-color: var(--material4);
+        color: var(--mainWhite);
+    }
+
+    #menu {
+        background-color: var(--material4);
+        color: var(--mainWhite);
+        pointer-events: none;
+    }
+}
+
+.nav-buttons-small {
+    display: none;
+}
+
+section.most-orderd {
+    color: white;
+
+    h2 {
+        margin: 0 50px;
+        font-size: 30px;
+        position: relative;
+    }
+
+    h2::before {
+        content: '';
+        width: 9px;
+        height: 70%;
+        position: absolute;
+        top: 50%;
+        transform: translate(0, -50%);
+        right: -20px;
+        background-color: var(--mainWhite);
+    }
+
+    .content {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        flex-wrap: nowrap;
+        overflow: auto;
+        padding: 20px;
+
+        figure {
+            flex: 0 0 200px;
+            background-color: var(--material1);
+            border-radius: 20px;
+            margin: 22px;
+            padding: 10px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            box-shadow: var(--buttonShadow);
+
+            img {
+                width: 100%;
+                border-radius: 10px;
+            }
+
+            figcaption {
+                font-weight: bold;
+                font-size: 20px;
+            }
+
+            span {
+                direction: ltr;
+                margin-top: -5px;
+            }
+
+            span::after {
+                content: " EGP";
+            }
+        }
+    }
+}
+
+
+.menu {
+    background-image: url("./../Main\ page\ photos/wallpaper.png");
+    background-color: var(--mainWhite);
+    background-blend-mode: darken;
+    background-position: center;
+    background-repeat: repeat;
+    box-shadow: 0 -2px 7px rgba(0, 0, 0, 0.2);
+    padding: 5px 20px;
+    margin-top: 20px;
+    border-radius: 15px 15px 0 0;
+    display: flex;
+    flex-direction: column;
+
+    h2 {
+        position: relative;
+        margin: 20px;
+    }
+
+    h2::before {
+        content: '';
+        width: 9px;
+        height: 70%;
+        position: absolute;
+        top: 50%;
+        transform: translate(0, -50%);
+        right: -20px;
+        background-color: var(--material3);
+    }
+
+    >div {
+        width: fit-content;
+        margin: 0 0 40px 0;
+
+        .menu-content {
+            background-color: var(--material1);
+            border-radius: 10px;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: center;
+        }
+
+        figure {
+            flex: 1 0 180px;
+            max-width: 250px;
+            width: 200px;
+            background-color: var(--mainWhite);
+            border-radius: 10px;
+            padding: 10px;
+            margin: 25px 30px;
+            box-shadow: var(--buttonShadow);
+            transition: 200ms;
+
+            img {
+                width: 100%;
+                border-radius: 5px;
+            }
+
+            figcaption {
+                font-weight: 600;
+                font-size: 19px;
+                margin-top: -7px;
+            }
+        }
+
+        figure:hover {
+            opacity: .85;
+        }
+
+        .drink-info {
+            .price-info {
+                direction: ltr;
+                display: flex;
+                justify-content: space-between;
+
+                span {
+                    margin-top: -15px;
+                }
+
+                .col1 {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: flex-end;
+                    font-weight: 800;
+                }
+
+                .col2 {
+                    flex: 2 1;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                }
+
+                .col2 span::after {
+                    content: " EGP";
+                }
+            }
+
+            p {
+                margin: 10px 0 0 0;
+                line-height: 20px;
+            }
+        }
+    }
+}
+
+@media (max-width:750px) {
+    .nav-buttons {
+        display: none;
+    }
+
+    nav .humburger {
+        display: flex;
+    }
+
+    .nav-buttons-small {
+        /*JavaScript issue*/
+        visibility: hidden;
+        display: flex;
+        justify-content: flex-end;
+        flex-direction: column;
+        border-radius: 0 0 10px 10px;
+        box-shadow: var(--buttonShadow);
+        position: absolute;
+        z-index: 1;
+        top: 20px;
+        right: 0;
+        width: 200px;
+        height: 250px;
+
+        a {
+            border-radius: 5px;
+            width: 100%;
+        }
+    }
+
+    section.most-orderd {
+        h2 {
+            font-size: 22px;
+            margin-right: 35px;
+        }
+
+        .content {
+            padding: 0;
+
+            figure {
+                flex: 0 0 180px;
+                max-width: 170px;
+                margin: 10px;
+
+                figcaption {
+                    font-size: 17px;
+                }
+
+                span {
+                    font-size: 15px;
+                }
+            }
+        }
+
+    }
+
+    .menu {
+        >div {
+            figure {
+                flex: 1 0 180px;
+                max-width: 200px;
+            }
+        }
+    }
 }
