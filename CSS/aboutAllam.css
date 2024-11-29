@@ -1,0 +1,261 @@
+@import url('https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&family=Noto+Sans+Arabic:wght@100..900&family=Noto+Serif+TC:wght@200..900&display=swap');
+/*font-family: "Noto Sans Arabic", sans-serif; */
+@import url('https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&family=Noto+Sans+Arabic:wght@100..900&family=Noto+Serif+TC:wght@200..900&display=swap');
+/* font-family: "Lexend", serif; */
+
+:root {
+    --mainWhite: #E9E3D5;
+    --material1: #C6A988;
+    --material2: #6F4E37;
+    --material3: #4A2920;
+    --material4: #492310;
+    --material5: #2D0C05;
+    --material6-orange: #D99937;
+    --text: #090604;
+    --buttonHover: #c6a98871;
+    --buttonShadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    scrollbar-color: var(--mainWhite) var(--buttonHover);
+    scrollbar-width: auto;
+}
+
+* {
+    -webkit-box-sizing: border-box;
+    -o-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+::-webkit-scrollbar {
+    width: 20px;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: var(--mainWhite);
+    border-radius: 20px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--buttonHover);
+}
+
+::-webkit-scrollbar-track {
+    background: var(--buttonHover);
+}
+
+body {
+    font-family: "Noto Sans Arabic", sans-serif;
+    color: var(--text);
+    margin: 0;
+    background-color: var(--mainWhite);
+}
+
+main {
+    direction: rtl;
+}
+
+header {
+    position: fixed;
+    z-index: 5;
+    left: 5px;
+    right: 5px;
+    top: 5px;
+    direction: ltr;
+    animation-name: slideDown;
+    animation-duration: 2100ms;
+}
+
+nav {
+    width: 100%;
+    padding: 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    z-index: 2;
+    background-color: var(--mainWhite);
+    border-radius: 50px;
+    background-image: url("./../Main\ page\ photos/wallpaper.png");
+    background-color: var(--mainWhite);
+    background-blend-mode: darken;
+    background-position: center;
+    background-repeat: repeat;
+    box-shadow: var(--buttonShadow);
+
+    h1 {
+        margin: 0;
+        color: var(--material5);
+        animation-name: slideDown;
+        animation-duration: 2400ms;
+        font-family: "Lexend", serif;
+        font-weight: 900;
+    }
+
+    a#logo {
+        height: 55px;
+        width: 55px;
+        animation-name: slidedown;
+        animation-duration: 2000ms;
+        animation-fill-mode: both;
+        animation-name: slideDown;
+        animation-duration: 2150ms;
+    }
+
+    a#logo img {
+        background-color: var(--material1);
+        width: inherit;
+        border-radius: 50%;
+    }
+
+    .humburger {
+        cursor: pointer;
+        height: 55px;
+        width: 55px;
+        background-color: var(--material1);
+        border: none;
+        border-radius: 50%;
+        padding: 5px;
+        display: none;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        position: relative;
+        animation-name: slideDown;
+        animation-duration: 2700ms;
+
+        .bar {
+            width: 25px;
+            height: 4px;
+            background-color: var(--material4);
+            margin: 2px;
+            border-radius: 3px;
+        }
+    }
+
+    #menu-nav {
+        position: relative;
+        z-index: 2;
+    }
+}
+
+.nav-buttons {
+    animation-name: slideDown;
+    animation-duration: 2700ms;
+}
+
+.nav-buttons,
+.nav-buttons-small {
+    list-style-type: none;
+    margin: 0 5px 0 0;
+    padding: 5px;
+    border-radius: 30px;
+    background-color: var(--material1);
+    display: flex;
+    flex-direction: row-reverse;
+    gap: 20px;
+    font-weight: 400;
+
+    a {
+        text-decoration: none;
+        color: var(--text);
+        padding: 0 10px;
+        width: fit-content;
+        height: fit-content;
+        border-radius: 20px;
+        transition: 200ms;
+    }
+
+    a:hover {
+        background-color: #6f4e3761;
+    }
+
+    a:active {
+        background-color: var(--material4);
+        color: var(--mainWhite);
+    }
+
+    #info {
+        background-color: var(--material4);
+        color: white;
+        pointer-events: none;
+    }
+}
+
+.nav-buttons-small {
+    display: none;
+}
+
+.introduction {
+    height: 100vh;
+    width: 100%;
+    background-image: linear-gradient(200deg, var(--material2), var(--material3));
+
+    .img {
+        background-image: url("./../Main\ page\ photos/allam cover photo.jpg");
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        width: 100%;
+        height: 100vh;
+    }
+
+}
+
+#wave {
+    position: absolute;
+    top: calc(100vh + 1px);
+    transform: translateY(-100%);
+}
+
+.main-body {
+    background-color: var(--mainWhite);
+
+    .main-content {
+
+        #about-allam,
+        article {
+            margin-top: 90px;
+
+            h2 {
+                margin-top: 0;
+                margin-right: 30px;
+                position: relative;
+            }
+
+            h2::before {
+                content: '';
+                width: 9px;
+                height: 70%;
+                position: absolute;
+                top: 50%;
+                transform: translate(0, -50%);
+                right: -20px;
+                background-color: var(--material6-orange);
+            }
+
+            p {
+                padding: 0 20px;
+                text-indent: 15px;
+            }
+
+            .map-background {
+                width: 100%;
+                text-align: center;
+                padding: 30px 0;
+                background-image: linear-gradient(200deg, var(--material2), var(--material3));
+
+                iframe {
+                    border-radius: 10px;
+                    box-shadow: var(--buttonShadow);
+                    width: 80%;
+                    margin: 0;
+                }
+            }
+        }
+    }
+}
+
+/* @keyframes slideDown {
+    0% {
+        transform: translateY(-100px);
+    }
+} */
