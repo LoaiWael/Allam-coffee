@@ -308,7 +308,7 @@ section.most-orderd {
             background-color: var(--mainWhite);
             border-radius: 10px;
             padding: 10px;
-            margin: 25px 30px;
+            margin: 15px;
             box-shadow: var(--buttonShadow);
             transition: 200ms;
 
@@ -319,7 +319,6 @@ section.most-orderd {
 
             figcaption {
                 font-weight: 600;
-                font-size: 19px;
                 margin-top: -7px;
             }
         }
@@ -329,6 +328,7 @@ section.most-orderd {
         }
 
         .drink-info {
+
             .price-info {
                 direction: ltr;
                 display: flex;
@@ -501,7 +501,7 @@ section.most-orderd {
             padding: 0;
 
             figure {
-                flex: 0 0 180px;
+                flex: 0 0 150px;
                 max-width: 170px;
                 margin: 10px;
 
@@ -520,8 +520,9 @@ section.most-orderd {
     .menu {
         >div {
             figure {
-                flex: 1 0 180px;
-                max-width: 200px;
+                flex: 1 0 150px;
+                max-width: 170px;
+                margin: 10px;
             }
         }
     }
