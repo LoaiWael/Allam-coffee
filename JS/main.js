@@ -11,4 +11,7 @@ $(function () {
     $('#first-button').click(function (e) {
         window.location.href = './../Allam-coffee/menu.html';
     });
+    $("#sec-button").click(function (e) {
+        window.location.href = './../Allam-coffee/aboutAllam.html#contacts';
+    });
 })
