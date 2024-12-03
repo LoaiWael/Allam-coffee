@@ -16,7 +16,7 @@ $(function () {
         $(".fast-scroll-links").slideToggle("fast");
     });
 
-    const image = document.getElementsByTagName("img");
+    const image = $("img");
     image.setAttribute("draggable", "false");
     image.setAttribute("onecontextmenu", "false");
     image.oncontextmenu = function () {
