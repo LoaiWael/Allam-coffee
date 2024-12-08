@@ -16,10 +16,10 @@ $(function () {
         $(".fast-scroll-links").slideToggle("fast");
     });
 
-    const image = $("img");
-    image.setAttribute("draggable", "false");
-    image.setAttribute("onecontextmenu", "false");
-    image.oncontextmenu = function () {
-        return false;
-    }
+    // var image = document.getElementsByTagName("img");
+    // image.setAttribute("draggable", "false");
+    // image.setAttribute("onecontextmenu", "false");
+    // image.oncontextmenu = function () {
+    //     return false;
+    // }
 })
