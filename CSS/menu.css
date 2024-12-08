@@ -45,7 +45,7 @@ body {
     color: var(--text);
     margin: 0;
     background-color: var(--material2);
-    background-image: url("./../3D\ models/coffee beans transparent.png");
+    background-image: url("./../3D\ models/coffee beans transparent.webp");
     background-size: 70%;
     background-position: top;
 }

@@ -34,7 +34,7 @@ main {
     padding: 10px;
     border-radius: 10px;
     height: calc(100vh - 10px);
-    background-image: url("./../Main\ page\ photos/wallpaper.png");
+    background-image: url("./../Main\ page\ photos/wallpaper.webp");
     background-color: var(--mainWhite);
     background-blend-mode: darken;
     background-position: center;
