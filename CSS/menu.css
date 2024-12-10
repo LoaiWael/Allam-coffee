@@ -223,7 +223,7 @@ section.most-orderd {
         figure {
             flex: 0 0 200px;
             background-color: var(--material1);
-            border-radius: 20px;
+            border-radius: 15px;
             margin: 22px;
             padding: 10px;
             display: flex;
@@ -323,7 +323,8 @@ section.most-orderd {
         }
 
         figure:hover {
-            opacity: .85;
+            box-shadow: 0 2.5px 5px rgba(0, 0, 0, 0.4);
+            scale: 1.03;
         }
 
         .drink-info {
@@ -522,8 +523,14 @@ section.most-orderd {
 
     }
 
-    .menu div.menu-content {
-        grid-template-columns: repeat(3, 1fr);
+    .menu {
+        h2 {
+            margin-bottom: 5px;
+        }
+
+        div.menu-content {
+            grid-template-columns: repeat(3, 1fr);
+        }
     }
 
     .fast-scroll {
