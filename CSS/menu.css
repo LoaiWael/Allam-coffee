@@ -182,6 +182,9 @@ nav {
 
 .nav-buttons-small {
     display: none;
+    background-color: #c6a988a5;
+    backdrop-filter: blur(10px);
+    direction: rtl;
 }
 
 section.most-orderd {

@@ -186,6 +186,9 @@ nav {
 
 .nav-buttons-small {
     display: none;
+    background-color: #c6a988a5;
+    backdrop-filter: blur(10px);
+    direction: rtl;
 }
 
 .introduction {
@@ -278,8 +281,6 @@ nav {
 
         #about-allam,
         article {
-            margin-top: 90px;
-
             h2 {
                 margin-top: 0;
                 margin-right: 30px;
