@@ -166,6 +166,10 @@ nav {
 
 section {
     direction: rtl;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 .headline {
@@ -246,6 +250,7 @@ section {
     display: flex;
     justify-content: space-between;
     position: relative;
+    margin-top: -50px;
 
     #mug {
         width: 400px;
@@ -257,14 +262,31 @@ section {
     }
 
     #coffee-beans {
-        width: 600px;
+        width: 650px;
         position: absolute;
         left: -400px;
         bottom: -150px;
-        filter: drop-shadow(var(--mugShadow));
+        filter: drop-shadow(var(--mugShadow)) blur(2px);
         animation-name: slideright;
         animation-duration: 2400ms;
     }
+}
+
+@media (min-height:900px) {
+    .photo-space {
+        margin-top: 0;
+
+        #mug {
+            width: 700px;
+            margin-right: -100px;
+        }
+
+        #coffee-beans {
+            width: 1000px;
+            left: -750px;
+        }
+    }
+
 }
 
 @media (max-width:570px) {
@@ -307,6 +329,7 @@ section {
     }
 
     .photo-space {
+        margin-top: 0;
 
         #mug {
             width: 300px;
