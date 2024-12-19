@@ -5,6 +5,7 @@
     --mainWhite: #E9E3D5;
     --material1: #C6A988;
     --material2: #6F4E37;
+    --material7: #573e2c;
     --material3: #4A2920;
     --material4: #492310;
     --material5: #2D0C05;
@@ -12,7 +13,7 @@
     --text: #090604;
     --buttonHover: #c6a98871;
     --buttonShadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-    scrollbar-color: var(--mainWhite) var(--buttonHover);
+    scrollbar-color: var(--material7) var(--buttonHover);
     scrollbar-width: auto;
 }
 
@@ -28,7 +29,7 @@
 }
 
 ::-webkit-scrollbar-thumb {
-    background-color: var(--mainWhite);
+    background-color: var(--material7);
     border-radius: 20px;
 }
 
