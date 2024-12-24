@@ -15,11 +15,4 @@ $(function () {
         $(".fast-scroll-links").css("visibility", "visible");
         $(".fast-scroll-links").slideToggle("fast");
     });
-
-    // var image = document.getElementsByTagName("img");
-    // image.setAttribute("draggable", "false");
-    // image.setAttribute("onecontextmenu", "false");
-    // image.oncontextmenu = function () {
-    //     return false;
-    // }
 })
