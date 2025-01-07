@@ -397,6 +397,10 @@ section.most-orderd {
         }
     }
 
+    #hot-drinks {
+        margin-top: 0;
+    }
+
     #additions {
         width: 100%;
 
