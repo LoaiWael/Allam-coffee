@@ -19,6 +19,7 @@
     --linearGradiend: linear-gradient(200deg, var(--material2), var(--material3));
     scrollbar-color: var(--material7) var(--buttonHover);
     scrollbar-width: auto;
+    scroll-behavior: smooth;
 }
 
 * {

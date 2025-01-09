@@ -16,6 +16,7 @@
     --buttonShadow: 0 2px 5px rgba(0, 0, 0, 0.2);
     scrollbar-color: var(--mainWhite) var(--material8);
     scrollbar-width: auto;
+    scroll-behavior: smooth;
 }
 
 * {
