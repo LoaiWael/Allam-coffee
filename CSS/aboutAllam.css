@@ -16,7 +16,7 @@
     --buttonHover: #c6a98871;
     --buttonShadow: 0 2px 5px rgba(0, 0, 0, 0.2);
     --mugShadow: -4px 7px 7px rgba(0, 0, 0, 0.2);
-    --linearGradiend: linear-gradient(200deg, var(--material2), var(--material3));
+    --linearGradiend: linear-gradient(180deg, var(--material2), var(--material3));
     scrollbar-color: var(--material7) var(--buttonHover);
     scrollbar-width: auto;
     scroll-behavior: smooth;
@@ -51,6 +51,7 @@ body {
     color: var(--text);
     margin: 0;
     background-color: var(--mainWhite);
+    font-size: clamp(0.9375rem, 1rem, 1.125rem);
 }
 
 main {
@@ -90,15 +91,15 @@ nav {
         margin: 0;
         color: var(--material5);
         animation-name: slideDown;
-        animation-duration: 2400ms;
         font-family: "Lexend", serif;
         font-weight: 900;
         text-align: center;
+        animation-duration: 2400ms;
     }
 
     a#logo {
-        height: 55px;
-        width: 55px;
+        flex-basis: fit-content;
+        clip-path: circle();
         animation-name: slidedown;
         animation-duration: 2000ms;
         animation-fill-mode: both;
@@ -107,19 +108,20 @@ nav {
     }
 
     a#logo img {
+        width: max(3.25em);
+        vertical-align: middle;
         background-color: var(--material1);
-        width: inherit;
         border-radius: 50%;
     }
 
     .humburger {
         cursor: pointer;
-        height: 55px;
-        width: 55px;
+        aspect-ratio: 1/1;
+        width: 51.99px;
         background-color: var(--material1);
         border: none;
         border-radius: 50%;
-        padding: 5px;
+        padding: calc(52px - 3.25em);
         display: none;
         align-items: center;
         justify-content: center;
@@ -133,9 +135,10 @@ nav {
             height: 4px;
             background-color: var(--material4);
             margin: 2px;
-            border-radius: 3px;
+            border-radius: 0.2em;
         }
     }
+
 
     #menu-nav {
         position: relative;
@@ -151,9 +154,9 @@ nav {
 .nav-buttons,
 .nav-buttons-small {
     list-style-type: none;
-    margin: 0 5px 0 0;
-    padding: 5px;
-    border-radius: 30px;
+    margin: 0 0.5em 0 0;
+    padding: 0.25em;
+    border-radius: 20em;
     background-color: var(--material1);
     display: flex;
     flex-direction: row-reverse;
@@ -166,7 +169,7 @@ nav {
         padding: 0 10px;
         width: fit-content;
         height: fit-content;
-        border-radius: 20px;
+        border-radius: 20em;
         transition: 200ms;
     }
 
@@ -281,10 +284,8 @@ nav {
             background-color: var(--buttonHover);
         }
 
-        #about-allam,
-        article {
+        #about-allam {
             h2 {
-                margin-top: 0;
                 margin-right: 30px;
                 position: relative;
             }
@@ -301,8 +302,8 @@ nav {
             }
 
             p {
-                padding: 0 20px;
-                text-indent: 15px;
+                padding: 0 2em;
+                max-width: 75ch;
             }
 
             .map-background {
@@ -321,21 +322,69 @@ nav {
             }
         }
 
+        article:not(#about-allam) {
+            padding-top: 10rem;
+        }
+
+        article:not(#about-allam) h2 {
+            margin: 2em 0 0 0;
+            transform: translateX(50%);
+            position: relative;
+            right: 50%;
+            width: fit-content;
+            background-color: var(--material2);
+            text-align: center;
+            border-radius: 0.75em 0.75em 0 0;
+            padding: 0.5em;
+            color: white;
+
+            span {
+                background-color: var(--material5);
+                padding: 0 0.5em;
+                border-radius: 0.25em;
+                box-shadow: var(--buttonShadow);
+            }
+        }
+
+        article:not(#about-allam) h2::before {
+            content: '';
+            height: 1.125em;
+            width: 1.125em;
+            position: absolute;
+            bottom: 0;
+            right: -1.125em;
+            background-color: transparent;
+            border-bottom-left-radius: 0.625em;
+            box-shadow: -0.375em 0.375em 0 0 var(--material2);
+        }
+
+        article:not(#about-allam) h2::after {
+            content: '';
+            height: 1.125em;
+            width: 1.125em;
+            position: absolute;
+            bottom: 0;
+            left: -1.125em;
+            background-color: transparent;
+            border-bottom-right-radius: 0.625em;
+            box-shadow: 0.375em 0.375em 0 0 var(--material2);
+        }
+
         .menu-section {
             position: relative;
             display: flex;
             justify-content: center;
             align-items: center;
-            padding-top: 20px;
+            margin: 0 auto;
+            width: 95%;
+            max-width: 1000px;
 
             .small-menu {
                 order: 1;
                 background-image: var(--linearGradiend);
-                padding: 10px;
-                border-radius: 20px;
-                width: 45%;
-                top: 10px;
-                left: 10px;
+                padding: 0.5em;
+                border-radius: 1em;
+                width: inherit;
                 box-shadow: var(--buttonShadow);
 
                 ul {
@@ -369,36 +418,44 @@ nav {
             img {
                 position: absolute;
                 top: 60%;
-                left: 61%;
+                left: 75%;
                 width: 300px;
                 transform: rotate(10deg);
                 filter: drop-shadow(var(--mugShadow));
+                clip-path: url("./../3D models/mug.webp");
             }
         }
 
         #contacts {
-            margin-top: 250px;
-            margin-bottom: 100px;
+            margin-top: 10em;
+            margin-bottom: 10em;
         }
 
         .contacts {
             direction: ltr;
             list-style-type: none;
-            margin: 0;
-            padding: 10px;
+            margin: 0 auto;
+            width: 80%;
+            max-width: 1000px;
+            padding: 1em;
+            border-radius: 1em;
             background-image: var(--linearGradiend);
             font-family: "Lexend", serif;
             display: flex;
+            flex-direction: column;
             align-items: center;
             justify-content: space-evenly;
             flex-wrap: wrap;
-            gap: 5px;
+            gap: 1em;
             align-content: space-evenly;
             box-shadow: var(--buttonShadow);
 
             li {
+                width: 100%;
+                text-align: center;
 
                 a {
+                    width: 100%;
                     background-color: var(--material5);
                     padding: 5px 10px;
                     border-radius: 5px;
@@ -427,9 +484,6 @@ nav {
                 opacity: 0.8;
             }
 
-            #tele:hover span {
-                display: inline;
-            }
         }
     }
 }
@@ -437,8 +491,9 @@ nav {
 footer {
     background-color: var(--material5);
     color: white;
-    padding: 15px;
+    padding: 1em;
     font-family: "Lexend", serif;
+    padding-top: 4em;
 }
 
 footer a:hover {
@@ -477,17 +532,17 @@ footer a:hover {
 .bottom-footer p {
     margin: 5px 0 10px;
     font-weight: 50;
-    font-size: 10px;
+    font-size: 0.65rem;
 }
 
 .logo-footer {
     color: white;
     font-weight: 900;
-    font-size: 20px;
+    font-size: 2rem;
     flex: 2 70px;
     position: relative;
     text-wrap: nowrap;
-    line-height: 17px;
+    line-height: 0.8;
     letter-spacing: 0;
 }
 
@@ -498,13 +553,13 @@ footer a:hover {
 .top-footer a {
     color: white;
     text-transform: uppercase;
-    font-size: 11px;
+    font-size: 0.65rem;
 }
 
 footer hr {
     width: 85%;
-    margin-top: 20px;
-    margin-bottom: 10px;
+    margin-top: 1.75em;
+    margin-bottom: 1em;
 }
 
 @media (max-width:645px) {
@@ -534,16 +589,17 @@ footer hr {
         a {
             border-radius: 5px;
             width: 100%;
+            font-weight: 450;
         }
+    }
+
+    article h2 {
+        font-size: clamp(1.125rem, 1vw, 1vw);
     }
 
     #back-wave,
     #backback-wave {
         bottom: 0;
-    }
-
-    .main-body .main-content .menu-section .small-menu {
-        width: 80%;
     }
 
     .main-body .main-content .menu-section img {
@@ -553,7 +609,7 @@ footer hr {
 
     .logo-footer {
         flex: 2 1 100%;
-        margin: 10px 0 20px;
+        margin-bottom: 20px;
     }
 }
 

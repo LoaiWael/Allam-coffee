@@ -51,6 +51,7 @@ body {
     background-image: url("./../3D\ models/coffee beans transparent.webp");
     background-size: 70%;
     background-position: top;
+    font-size: clamp(0.9375rem, 1rem, 1.125rem);
 }
 
 main {
@@ -61,9 +62,9 @@ main {
 header {
     position: fixed;
     z-index: 5;
+    top: 5px;
     left: 5px;
     right: 5px;
-    top: 5px;
     direction: ltr;
     animation-name: slideDown;
     animation-duration: 2100ms;
@@ -94,8 +95,8 @@ nav {
     }
 
     a#logo {
-        height: 55px;
-        width: 55px;
+        flex-basis: fit-content;
+        clip-path: circle();
         animation-name: slidedown;
         animation-duration: 2000ms;
         animation-fill-mode: both;
@@ -104,19 +105,20 @@ nav {
     }
 
     a#logo img {
+        width: max(3.25em);
+        vertical-align: middle;
         background-color: var(--material1);
-        width: inherit;
         border-radius: 50%;
     }
 
     .humburger {
         cursor: pointer;
-        height: 55px;
-        width: 55px;
+        aspect-ratio: 1/1;
+        width: 51.99px;
         background-color: var(--material1);
         border: none;
         border-radius: 50%;
-        padding: 5px;
+        padding: calc(52px - 3.25em);
         display: none;
         align-items: center;
         justify-content: center;
@@ -130,7 +132,7 @@ nav {
             height: 4px;
             background-color: var(--material4);
             margin: 2px;
-            border-radius: 3px;
+            border-radius: 0.2em;
         }
     }
 
@@ -148,9 +150,9 @@ nav {
 .nav-buttons,
 .nav-buttons-small {
     list-style-type: none;
-    margin: 0 5px 0 0;
-    padding: 5px;
-    border-radius: 30px;
+    margin: 0 0.5em 0 0;
+    padding: 0.25em;
+    border-radius: 20em;
     background-color: var(--material1);
     display: flex;
     flex-direction: row-reverse;
@@ -163,7 +165,7 @@ nav {
         padding: 0 10px;
         width: fit-content;
         height: fit-content;
-        border-radius: 20px;
+        border-radius: 20em;
         transition: 200ms;
     }
 
@@ -192,10 +194,10 @@ nav {
 
 section.most-orderd {
     color: white;
+    padding: 0.75vw 0;
 
     h2 {
-        margin: 0 50px;
-        font-size: 30px;
+        margin: 0 1.5em;
         position: relative;
         animation-name: slideUp;
         animation-duration: 1500ms;
@@ -205,12 +207,12 @@ section.most-orderd {
 
     h2::before {
         content: '';
-        width: 9px;
+        width: 0.4em;
         height: 70%;
         position: absolute;
         top: 50%;
         transform: translate(0, -50%);
-        right: -20px;
+        right: -0.75em;
         background-color: var(--mainWhite);
     }
 
@@ -220,18 +222,17 @@ section.most-orderd {
         align-items: center;
         flex-wrap: nowrap;
         overflow: auto;
-        padding: 20px;
         animation-name: slideUp;
         animation-duration: 2000ms;
         animation-delay: 500ms;
         animation-fill-mode: both;
 
         figure {
-            flex: 0 0 200px;
+            flex: 0 0 clamp(150px, 10vw, 16em);
             background-color: var(--material1);
             border-radius: 15px;
-            margin: 22px 1.2em;
-            padding: 10px;
+            margin: 2em 1vw;
+            padding: 0.5em;
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -245,12 +246,12 @@ section.most-orderd {
 
             figcaption {
                 font-weight: bold;
-                font-size: 20px;
             }
 
             span {
                 direction: ltr;
                 margin-top: -5px;
+                font-size: 0.875em;
             }
 
             span::after {
@@ -280,7 +281,7 @@ section.most-orderd {
     h2 {
         background-color: var(--material1);
         color: white;
-        padding: 10px;
+        padding: 0.75rem;
         margin: 0;
         position: relative;
         width: fit-content;
@@ -292,47 +293,47 @@ section.most-orderd {
             background-color: var(--material3);
             border-radius: 10px;
             display: inline-block;
-            padding: 0 14px;
+            padding: 0 0.5em;
             box-shadow: var(--buttonShadow);
         }
     }
 
     h2::before {
         content: '';
-        height: 30%;
-        width: 20%;
+        height: 1.125em;
+        width: 1.125em;
         position: absolute;
         bottom: 0;
-        right: -20%;
+        right: -1.125em;
         background-color: transparent;
-        border-bottom-left-radius: 20px;
-        box-shadow: -5px 5px 0 4px var(--material1);
+        border-bottom-left-radius: 0.625em;
+        box-shadow: -0.375em 0.375em 0 0 var(--material1);
     }
 
     h2::after {
         content: '';
-        height: 30%;
-        width: 20%;
+        height: 1.125em;
+        width: 1.125em;
         position: absolute;
         bottom: 0;
-        left: -20%;
+        left: -1.125em;
         background-color: transparent;
-        border-bottom-right-radius: 20px;
-        box-shadow: 5px 5px 0 4px var(--material1);
+        border-bottom-right-radius: 0.625em;
+        box-shadow: 0.375em 0.375em 0 0 var(--material1);
     }
 
     >div {
         width: fit-content;
-        margin: 44px 15%;
-        padding-top: 100px;
+        margin: 0 15%;
+        padding-top: 10rem;
 
         .menu-content {
             background-color: var(--material1);
-            border-radius: 10px;
+            border-radius: 20px;
             display: grid;
             grid-template-columns: repeat(5, 1fr);
             grid-template-rows: auto;
-            column-gap: 10px;
+            column-gap: 8px;
             align-items: center;
         }
 
@@ -340,8 +341,8 @@ section.most-orderd {
             width: auto;
             background-color: var(--mainWhite);
             border-radius: 10px;
-            padding: 10px;
-            margin: 10px;
+            padding: 0.5em;
+            margin: 0.75em;
             box-shadow: var(--buttonShadow);
             transition: 200ms;
 
@@ -367,9 +368,10 @@ section.most-orderd {
                 direction: ltr;
                 display: flex;
                 justify-content: space-between;
+                align-items: center;
 
                 span {
-                    margin-top: -15px;
+                    margin-top: -1em;
                 }
 
                 .col1 {
@@ -392,18 +394,15 @@ section.most-orderd {
             }
 
             p {
-                margin: 10px 0 0 0;
-                line-height: 20px;
+                margin: 0.75em 0 0 0;
+                line-height: 1.5;
             }
         }
     }
 
-    #hot-drinks {
-        margin-top: 0;
-    }
-
     #additions {
         width: 100%;
+        margin: 0;
 
         .menu-content {
             background-color: var(--material7);
@@ -415,14 +414,13 @@ section.most-orderd {
             overflow: auto;
             margin: 0;
             border-radius: 0;
-            padding: 50px 20px;
+            padding: 2em 1em;
 
             figure {
-                flex: 0 0 150px;
+                flex: 0 0 clamp(150px, 10vw, 16em);
+                margin: 0 1vw;
             }
         }
-
-        margin: 0;
 
         h2 {
 
@@ -434,11 +432,11 @@ section.most-orderd {
         }
 
         h2::before {
-            box-shadow: -5px 5px 0 4px var(--material7);
+            box-shadow: -0.375em 0.375em var(--material7);
         }
 
         h2::after {
-            box-shadow: 5px 5px 0 4px var(--material7);
+            box-shadow: 0.375em 0.375em var(--material7);
         }
     }
 }
@@ -451,12 +449,12 @@ section.most-orderd {
     #fast-scroll-button {
         border: none;
         border-radius: 50%;
-        width: 60px;
-        height: 60px;
+        aspect-ratio: 1/1;
+        width: 4rem;
         background-color: var(--material6-orange);
         color: white;
-        margin-bottom: 20px;
-        margin-right: 20px;
+        margin-bottom: clamp(1.25em, 2vw, 2vw);
+        margin-right: clamp(1.25em, 2vw, 2vw);
         box-shadow: var(--buttonShadow);
         transition: 100ms;
         animation-name: slideLeft;
@@ -475,12 +473,16 @@ section.most-orderd {
         gap: 10px;
         background-color: var(--material6-orange);
         border-radius: 10px 10px 0 0;
-        padding: 5px;
+        padding: 0.5em;
         box-shadow: 0 -2px 7px rgba(0, 0, 0, 0.2);
 
         a {
             text-decoration: none;
             color: white;
+            background-color: hsl(36, 68%, 60%);
+            flex: 1 1 auto;
+            min-width: 80px;
+            text-align: center;
             font-weight: 500;
             padding: 10px;
             border-radius: 5px;
@@ -489,22 +491,23 @@ section.most-orderd {
     }
 
     a:hover {
-        background-color: var(--buttonHover);
+        transform: scale(1.0625);
+        box-shadow: var(--buttonShadow);
     }
 
     a:active {
-        background-color: #896124;
+        transform: scale(1);
     }
 }
 
 footer {
     background-color: var(--material7);
     color: white;
-    padding: 15px;
+    padding: 1em;
     font-family: "Lexend", serif;
     position: relative;
     z-index: 2;
-    padding-top: 100px;
+    padding-top: 7em;
 }
 
 footer a:hover {
@@ -543,17 +546,17 @@ footer a:hover {
 .bottom-footer p {
     margin: 5px 0 10px;
     font-weight: 50;
-    font-size: 10px;
+    font-size: 0.65rem;
 }
 
 .logo-footer {
     color: white;
     font-weight: 900;
-    font-size: 20px;
+    font-size: 2rem;
     flex: 2 70px;
     position: relative;
     text-wrap: nowrap;
-    line-height: 17px;
+    line-height: 0.8;
     letter-spacing: 0;
 }
 
@@ -564,13 +567,13 @@ footer a:hover {
 .top-footer a {
     color: white;
     text-transform: uppercase;
-    font-size: 11px;
+    font-size: 0.65rem;
 }
 
 footer hr {
     width: 85%;
-    margin-top: 20px;
-    margin-bottom: 10px;
+    margin-top: 1.75em;
+    margin-bottom: 1em;
 }
 
 @keyframes slideDown {
@@ -654,33 +657,8 @@ footer hr {
         a {
             border-radius: 5px;
             width: 100%;
+            font-weight: 450;
         }
-    }
-
-    section.most-orderd {
-        h2 {
-            font-size: 22px;
-            margin-right: 35px;
-        }
-
-        .content {
-            padding: 0;
-
-            figure {
-                flex: 0 0 150px;
-                max-width: 170px;
-                margin: 10px;
-
-                figcaption {
-                    font-size: 17px;
-                }
-
-                span {
-                    font-size: 15px;
-                }
-            }
-        }
-
     }
 
     .menu {
@@ -692,41 +670,22 @@ footer hr {
     .fast-scroll {
         left: 50%;
         transform: translateX(-50%);
-        font-size: 14px;
+        font-size: 0.89125em;
         gap: 2px;
         width: 95%;
     }
 
     .logo-footer {
         flex: 2 1 100%;
-        margin: 10px 0 20px;
+        margin-bottom: 20px;
     }
 }
 
 @media (max-width:540px) {
-    section.most-orderd .content {
-        figure {
-            flex: 0 0 140px;
-            max-width: 160px;
-
-            figcaption {
-                font-size: 17px;
-                font-weight: 500;
-            }
-
-            span {
-                font-size: 15px;
-                font-weight: 300;
-            }
-        }
-    }
-
     .menu div.menu-content {
         margin-left: 0;
         margin-right: 0;
     }
-
-
 
     .menu {
 
@@ -738,14 +697,10 @@ footer hr {
         figure .price-info {
             padding: 0;
             width: 100%;
-            font-size: 15px;
             flex-wrap: nowrap;
             text-wrap: nowrap;
         }
 
     }
 
-    #additions .menu-content {
-        margin-right: -20px;
-    }
 }

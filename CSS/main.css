@@ -27,6 +27,7 @@ body {
     color: var(--text);
     margin: 0;
     background-color: var(--material1);
+    font-size: clamp(0.9375rem, 1rem, 1.125rem);
 }
 
 main {
@@ -55,16 +56,18 @@ nav {
     position: relative;
 
     a#logo {
-        height: 55px;
-        width: 55px;
+        flex-basis: fit-content;
+        clip-path: circle();
         animation-name: slidedown;
         animation-duration: 2000ms;
         animation-fill-mode: both;
+        aspect-ratio: 1/1;
     }
 
     a#logo img {
         background-color: var(--material1);
-        width: inherit;
+        vertical-align: middle;
+        width: max(3.25em);
         border-radius: 50%;
     }
 
