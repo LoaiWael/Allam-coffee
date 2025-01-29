@@ -344,32 +344,34 @@ section {
     }
 }
 
-@keyframes slidedown {
-    0% {
-        transform: translateY(-100px);
+@media (prefers-reduced-motion:no-preference) {
+    @keyframes slidedown {
+        0% {
+            transform: translateY(-100px);
+        }
     }
-}
 
-@keyframes slideleft {
-    0% {
-        transform: translateX(200px);
+    @keyframes slideleft {
+        0% {
+            transform: translateX(200px);
+        }
     }
-}
 
-@keyframes slideleftMug {
-    0% {
-        transform: translateX(500px);
+    @keyframes slideleftMug {
+        0% {
+            transform: translateX(500px);
+        }
     }
-}
 
-@keyframes slideright {
-    0% {
-        transform: translateX(-200px);
+    @keyframes slideright {
+        0% {
+            transform: translateX(-200px);
+        }
     }
-}
 
-@keyframes scale {
-    0% {
-        transform: scale(0.7);
+    @keyframes scale {
+        0% {
+            transform: scale(0.7);
+        }
     }
 }

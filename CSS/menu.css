@@ -195,8 +195,9 @@ nav {
 section.most-orderd {
     color: white;
     padding: 0.75vw 0;
-    animation: mostOrderd-scrolling linear;
-    animation-timeline: view();
+    animation: mostOrderd-scrolling linear both;
+    animation-timeline: scroll();
+    animation-range: 0 50vh;
 
     h2 {
         margin: 0 1.5em;
@@ -580,15 +581,13 @@ footer hr {
 @media (prefers-reduced-motion:no-preference) {
 
     @keyframes mostOrderd-scrolling {
-        exit 0% {
-            transform: translateY(0) scale(1);
-            filter: blur(0);
+        0% {
+            transform: translateY(0);
             opacity: 1;
         }
 
-        exit 90% {
-            transform: translateY(50%) scale(0.9);
-            filter: blur(3px);
+        100% {
+            transform: translateY(50%);
             opacity: 0.3;
         }
     }

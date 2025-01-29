@@ -56,7 +56,7 @@ body {
 
 main {
     direction: rtl;
-    overflow: hidden;
+    overflow: clip;
 }
 
 header {
@@ -288,6 +288,8 @@ nav {
             h2 {
                 margin-right: 30px;
                 position: relative;
+                animation: media-scrolling linear;
+                animation-timeline: view();
             }
 
             h2::before {
@@ -304,6 +306,8 @@ nav {
             p {
                 padding: 0 2em;
                 max-width: 75ch;
+                animation: media-scrolling linear;
+                animation-timeline: view();
             }
 
             .map-background {
@@ -318,6 +322,8 @@ nav {
                     box-shadow: var(--buttonShadow);
                     width: 80%;
                     margin: 0;
+                    animation: media-scrolling linear;
+                    animation-timeline: view();
                 }
             }
         }
@@ -368,6 +374,11 @@ nav {
             background-color: transparent;
             border-bottom-right-radius: 0.625em;
             box-shadow: 0.375em 0.375em 0 0 var(--material2);
+        }
+
+        article:has(.contacts, .menu-section) {
+            animation: media-scrolling linear both;
+            animation-timeline: view();
         }
 
         .menu-section {
@@ -423,6 +434,8 @@ nav {
                 transform: rotate(10deg);
                 filter: drop-shadow(var(--mugShadow));
                 clip-path: url("./../3D models/mug.webp");
+                animation: media-scrolling linear both;
+                animation-timeline: view();
             }
         }
 
@@ -453,6 +466,8 @@ nav {
             li {
                 width: 100%;
                 text-align: center;
+                animation: media-scrolling linear both;
+                animation-timeline: view();
 
                 a {
                     width: 100%;
@@ -613,21 +628,35 @@ footer hr {
     }
 }
 
-@keyframes slideDown {
-    0% {
-        transform: translateY(-100px);
-    }
-}
+@media (prefers-reduced-motion:no-preference) {
+    @keyframes media-scrolling {
+        entry 0% {
+            transform: translateY(20px) scale(0.9);
+            opacity: 0.4;
+        }
 
-@keyframes fadeIn {
-    0% {
-        scale: 1.1;
-        opacity: 0;
+        entry 80% {
+            transform: translateY(0);
+            opacity: 1;
+        }
     }
-}
 
-@keyframes wave {
-    100% {
-        transform: translateX(250px);
+    @keyframes slideDown {
+        0% {
+            transform: translateY(-100px);
+        }
+    }
+
+    @keyframes fadeIn {
+        0% {
+            scale: 1.1;
+            opacity: 0;
+        }
+    }
+
+    @keyframes wave {
+        100% {
+            transform: translateX(250px);
+        }
     }
 }
