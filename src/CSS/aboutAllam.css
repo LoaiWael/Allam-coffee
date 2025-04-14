@@ -1,7 +1,17 @@
 @import url('https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&family=Noto+Sans+Arabic:wght@100..900&family=Noto+Serif+TC:wght@200..900&display=swap');
-/*font-family: "Noto Sans Arabic", sans-serif; */
-@import url('https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&family=Noto+Sans+Arabic:wght@100..900&family=Noto+Serif+TC:wght@200..900&display=swap');
 /* font-family: "Lexend", serif; */
+
+@property --scroll-position {
+    syntax: "<number>";
+    inherits: true;
+    initial-value: 0;
+}
+
+@property --scroll-position-delayed {
+    syntax: "<number>";
+    inherits: true;
+    initial-value: 0;
+}
 
 :root {
     --mainWhite: #E9E3D5;
@@ -20,6 +30,8 @@
     scrollbar-color: var(--material7) var(--buttonHover);
     scrollbar-width: auto;
     scroll-behavior: smooth;
+    animation: scroll-velocity linear both;
+    animation-timeline: scroll(root);
 }
 
 * {
@@ -52,6 +64,9 @@ body {
     margin: 0;
     background-color: var(--mainWhite);
     font-size: clamp(0.9375rem, 1rem, 1.125rem);
+    transition: --scroll-position-delayed 0.25s ease-in-out;
+    --scrolling-down: calc(var(--scroll-position) - var(--scroll-position-delayed));
+    --scrolling-up: calc(var(--scroll-position-delayed) - var(--scroll-position));
 }
 
 main {
@@ -62,12 +77,13 @@ main {
 header {
     position: fixed;
     z-index: 100;
+    top: 5px;
     left: 5px;
     right: 5px;
-    top: 5px;
     direction: ltr;
     animation-name: slideDown;
     animation-duration: 2100ms;
+    transform: translateY(calc(5rem * var(--scrolling-up)));
 }
 
 nav {
@@ -77,15 +93,16 @@ nav {
     justify-content: space-between;
     align-items: center;
     position: relative;
-    z-index: 99;
-    background-color: var(--mainWhite);
+    z-index: 2;
+    background-color: hsla(42, 31%, 87%, 0.6);
     border-radius: 50px;
-    background-image: url("./../Main\ page\ photos/wallpaper.png");
-    background-color: var(--mainWhite);
-    background-blend-mode: darken;
+    background-image: url("./../../Main\ page\ photos/wallpaper.png");
+    background-blend-mode: overlay;
     background-position: center;
     background-repeat: repeat;
+    backdrop-filter: blur(10px);
     box-shadow: var(--buttonShadow);
+    border: 1px solid var(--material5);
 
     h1 {
         margin: 0;
@@ -203,7 +220,7 @@ nav {
     overflow: hidden;
 
     .img {
-        background-image: url("./../Main\ page\ photos/allam cover photo.webp");
+        background-image: url("./../../Main\ page\ photos/allam cover photo.webp");
         background-position: center;
         background-size: cover;
         background-repeat: no-repeat;
@@ -578,6 +595,13 @@ footer hr {
 }
 
 @media (max-width:645px) {
+
+    a:focus,
+    button:focus {
+        outline: 1.5px solid var(--material5);
+        -webkit-tap-highlight-color: transparent;
+    }
+
     .nav-buttons {
         display: none;
     }
@@ -629,6 +653,18 @@ footer hr {
 }
 
 @media (prefers-reduced-motion:no-preference) {
+    @keyframes scroll-velocity {
+        from {
+            --scroll-position: 0;
+            --scroll-position-delayed: 0;
+        }
+
+        to {
+            --scroll-position: 1;
+            --scroll-position-delayed: 1;
+        }
+    }
+
     @keyframes media-scrolling {
         entry 0% {
             transform: translateY(20px) scale(0.9);

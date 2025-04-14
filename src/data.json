@@ -1,0 +1,104 @@
+[
+  {
+    "drinkName": "كابتشينو",
+    "drinkCategory": "hot-drinks",
+    "mostOrdered": true,
+    "prices": [
+      {
+        "size": "MD",
+        "price": 49
+      },
+      {
+        "size": "L",
+        "price": 65
+      }
+    ],
+    "image": "./Menu photos/cappuccino.jpeg",
+    "ingredients": "معلومات عن المشروب مثل مكوناته"
+  },
+  {
+    "drinkName": "موكــا",
+    "drinkCategory": "hot-drinks",
+    "mostOrdered": false,
+    "prices": [
+      {
+        "size": "MD",
+        "price": 55
+      },
+      {
+        "size": "L",
+        "price": 69
+      }
+    ],
+    "image": "./Menu photos/mocha.jpg",
+    "ingredients": "معلومات عن المشروب مثل مكوناته"
+  },
+  {
+    "drinkName": "لاتــيــه",
+    "drinkCategory": "hot-drinks",
+    "mostOrdered": true,
+    "prices": [
+      {
+        "size": "MD",
+        "price": 49
+      },
+      {
+        "size": "L",
+        "price": 55
+      }
+    ],
+    "image": "./Menu photos/latee.jpeg",
+    "ingredients": "معلومات عن المشروب مثل مكوناته"
+  },
+  {
+    "drinkName": "لوتس لاتيــه",
+    "drinkCategory": "hot-drinks",
+    "mostOrdered": false,
+    "prices": [
+      {
+        "size": "MD",
+        "price": 65
+      },
+      {
+        "size": "L",
+        "price": 79
+      }
+    ],
+    "image": "./Menu photos/lotus latte.jpg",
+    "ingredients": "معلومات عن المشروب مثل مكوناته"
+  },
+  {
+    "drinkName": "أمريكانــو",
+    "drinkCategory": "hot-drinks",
+    "mostOrdered": false,
+    "prices": [
+      {
+        "size": "MD",
+        "price": 45
+      },
+      {
+        "size": "L",
+        "price": 50
+      }
+    ],
+    "image": "./Menu photos/amricano.jpg",
+    "ingredients": "معلومات عن المشروب مثل مكوناته"
+  },
+  {
+    "drinkName": "وايت موكــــا",
+    "drinkCategory": "hot-drinks",
+    "mostOrdered": false,
+    "prices": [
+      {
+        "size": "MD",
+        "price": 55
+      },
+      {
+        "size": "L",
+        "price": 69
+      }
+    ],
+    "image": "./Menu photos/white-mocha.jpg",
+    "ingredients": "معلومات عن المشروب مثل مكوناته"
+  }
+]

@@ -9,9 +9,9 @@ $(function () {
         isVisible = !isVisible;
     });
     $('#first-button').click(function (e) {
-        window.location.href = './../Allam-coffee/menu.html';
+        window.location.href = './../../menu.html';
     });
     $("#sec-button").click(function (e) {
-        window.location.href = './../Allam-coffee/aboutAllam.html#contacts';
+        window.location.href = './../../aboutAllam.html#contacts';
     });
 })
