@@ -9,9 +9,9 @@ $(function () {
         isVisible = !isVisible;
     });
     $('#first-button').click(function (e) {
-        window.location.href = './../../menu.html';
+        window.location.href = './menu.html';
     });
     $("#sec-button").click(function (e) {
-        window.location.href = './../../aboutAllam.html#contacts';
+        window.location.href = './aboutAllam.html#contacts';
     });
 })
