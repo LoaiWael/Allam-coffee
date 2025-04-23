@@ -13,26 +13,6 @@
     initial-value: 0;
 }
 
-:root {
-    --mainWhite: #E9E3D5;
-    --material1: #C6A988;
-    --material8: #e9e3d55b;
-    --material2: #6F4E37;
-    --material7: #573e2c;
-    --material3: #4A2920;
-    --material4: #492310;
-    --material5: #2D0C05;
-    --material6-orange: #D99937;
-    --text: #090604;
-    --buttonHover: #c6a98871;
-    --buttonShadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-    scrollbar-color: var(--mainWhite) var(--material8);
-    scrollbar-width: auto;
-    scroll-behavior: smooth;
-    animation: scroll-velocity linear both;
-    animation-timeline: scroll(root);
-}
-
 * {
     -webkit-box-sizing: border-box;
     -o-box-sizing: border-box;
@@ -58,17 +38,10 @@
 }
 
 body {
-    font-family: "Noto Sans Arabic", sans-serif;
-    color: var(--text);
-    margin: 0;
     background-color: var(--material2);
     background-image: url("./../../3D\ models/coffee beans transparent.webp");
     background-size: 70%;
     background-position: top;
-    font-size: clamp(0.9375rem, 1rem, 1.125rem);
-    transition: --scroll-position-delayed 0.25s ease-in-out;
-    --scrolling-down: calc(var(--scroll-position) - var(--scroll-position-delayed));
-    --scrolling-up: calc(var(--scroll-position-delayed) - var(--scroll-position));
 }
 
 main {

@@ -2,16 +2,6 @@
 /*font-family: "Noto Sans Arabic", sans-serif; */
 
 :root {
-    --mainWhite: #E9E3D5;
-    --material1: #C6A988;
-    --material2: #6F4E37;
-    --material3: #4A2920;
-    --material4: #492310;
-    --material5: #2D0C05;
-    --material6-orange: #D99937;
-    --text: #090604;
-    --buttonHover: #c6a98871;
-    --buttonShadow: 0 2px 5px rgba(0, 0, 0, 0.2);
     --mugShadow: -4px 7px 7px rgba(0, 0, 0, 0.2);
 }
 
@@ -23,11 +13,7 @@
 }
 
 body {
-    font-family: "Noto Sans Arabic", sans-serif;
-    color: var(--text);
-    margin: 0;
     background-color: var(--material1);
-    font-size: clamp(0.9375rem, 1rem, 1.125rem);
 }
 
 main {
