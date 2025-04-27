@@ -1,5 +1,5 @@
 window.onload = function () {
-    $('.loading-warpper').fadeOut('slow');
+    $('.loading-warpper').slideUp(900);
     $('html').css('overflow', 'auto');
 };
 
