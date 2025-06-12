@@ -1,4 +1,92 @@
-[
+class Drink {
+  #drinkName;
+  #drinkCategory;
+  #mostOrdered;
+  #prices;
+  #image;
+  #ingredients;
+
+  constructor(details) {
+    this.#drinkName = details.drinkName;
+    this.#drinkCategory = details.drinkCategory;
+    this.#mostOrdered = details.mostOrdered;
+    this.#prices = details.drinkCategory === 'additions' ? details.price : details.prices;
+    this.#image = details.image;
+    this.#ingredients = details.ingredients;
+  }
+
+  generateMostOrder() {
+    if (this.getDetails().mostOrdered === true) {
+      let price = '';
+      for (let i = 0; i < this.getDetails().prices.length; i++) {
+        price += `${this.getDetails().prices[i].price}`;
+        if (this.getDetails().prices[i + 1] != undefined)
+          price += ' / ';
+      }
+      return `<figure>
+        <img src="${this.getDetails().image}" alt="${this.getDetails().drinkName}" draggable="false">
+        <figcaption>${this.getDetails().drinkName}</figcaption>
+        <span>${price}</span>
+        </figure>`;
+    }
+    else {
+      return '';
+    }
+  }
+
+  generateFigure(category) {
+    if (this.getDetails().drinkCategory === 'additions' && category === 'additions') {
+      return `<figure>
+                  <img loading="lazy" src="${this.getDetails().image}" alt="${this.getDetails().drinkName}" draggable="false">
+                  <figcaption>${this.getDetails().drinkName}</figcaption>
+                  <div class="drink-info">
+                      <hr>
+                      <div class="price-info">
+                          <div class="col1"><span>Price:</span></div>
+                          <div class="col2"><span>${this.getDetails().prices}</span></div>
+                      </div>
+                  </div>
+              </figure>`;
+    }
+    else if (this.getDetails().drinkCategory === category) {
+      let secondSize = '';
+      let secondPrice = '';
+      if (this.getDetails().prices[1]) {
+        secondSize = `<span>${this.getDetails().prices[1].size}:</span>`;
+        secondPrice = `<span>${this.getDetails().prices[1].price}</span>`;
+      }
+
+      return `<figure>
+          <img loading="lazy" src="${this.getDetails().image}" alt="${this.getDetails().drinkName}" draggable="false">
+          <figcaption>${this.getDetails().drinkName}</figcaption>
+          <div class="drink-info">
+              <hr>
+              <div class="price-info">
+                  <div class="col1"><span>${this.getDetails().prices[0].size}:</span>${secondSize}</div>
+                  <div class="col2"><span>${this.getDetails().prices[0].price}</span>${secondPrice}</div>
+              </div>
+              <p>${this.getDetails().ingredients || 'معلومات عن المشروب مثل مكوناته'}</p>
+          </div>
+        </figure>`;
+    }
+    else {
+      return '';
+    }
+  }
+
+  getDetails() {
+    return {
+      drinkName: this.#drinkName,
+      drinkCategory: this.#drinkCategory,
+      mostOrdered: this.#mostOrdered,
+      prices: this.#prices,
+      image: this.#image,
+      ingredients: this.#ingredients
+    };
+  }
+}
+
+export default [
   {
     "drinkName": "كابتشينو",
     "drinkCategory": "hot-drinks",
@@ -1154,4 +1242,4 @@
     "price": null,
     "image": "./Menu photos/مياة غازية.jpeg"
   }
-]
+].map(drink => new Drink(drink));
